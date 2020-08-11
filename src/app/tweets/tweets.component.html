@@ -1,0 +1,11 @@
+<body>
+    <div id="wrapper">
+        <label>Check Word: </label><input type="text" #word (change)="checkWord(word.value)">
+        <div id="tweets"  *ngFor="let tweet of twat" >
+            <p>Date: {{tweet.date}}</p>
+            <p>Likes: {{tweet.likes}}</p>
+            <p [ngClass]="{'yellow': tweet.text.indexOf(word.value), 'red': !tweet.text.includes(word.value)}">{{tweet.text}}</p>
+        </div>
+        
+    </div>
+</body>
